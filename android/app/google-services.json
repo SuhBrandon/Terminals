@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "586829157644",
+    "project_id": "trendyvibes-6e946",
+    "storage_bucket": "trendyvibes-6e946.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586829157644:android:b075983654b56e96012529",
+        "android_client_info": {
+          "package_name": "com.terminals.trendyvibes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD08rXQzr187gwX2A5JXnigI89jTU1EYTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
