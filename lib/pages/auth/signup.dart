@@ -1,8 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_service.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -33,7 +36,7 @@ class _SignUpPageState extends State<SignUpPage> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
                     'assets/background.jpg'), // Add your background image here
@@ -58,7 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   TextField(
                     controller: _passwordController,
                     decoration: InputDecoration(
@@ -71,35 +74,39 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   if (_errorMessage != null)
                     Text(
                       _errorMessage!,
-                      style: TextStyle(color: Colors.red),
+                      style: const TextStyle(color: Colors.red),
                     ),
                   ElevatedButton(
                     onPressed: _signUpWithEmailPassword,
-                    child: Text('Sign Up with Email & Password'),
+                    child: const Text('Sign Up with Email & Password'),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () async {
                       User? user = await _authService.signInWithGoogle();
                       if (user != null) {
-                        print('Signed in with Google: ${user.email}');
+                        if (kDebugMode) {
+                          print('Signed in with Google: ${user.email}');
+                        }
                       }
                     },
-                    child: Text('Sign Up with Google'),
+                    child: const Text('Sign Up with Google'),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () async {
                       User? user = await _authService.signInWithApple();
                       if (user != null) {
-                        print('Signed in with Apple: ${user.email}');
+                        if (kDebugMode) {
+                          print('Signed in with Apple: ${user.email}');
+                        }
                       }
                     },
-                    child: Text('Sign Up with Apple'),
+                    child: const Text('Sign Up with Apple'),
                   ),
                 ],
               ),
