@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:test_app/pages/home_page.dart';
 import 'auth_service.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -19,7 +20,8 @@ class _SignUpPageState extends State<SignUpPage> {
         email: _emailController.text,
         password: _passwordController.text,
       );
-      // Navigate to home page or show success message
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
     } catch (e) {
       setState(() {
         _errorMessage = e.toString();

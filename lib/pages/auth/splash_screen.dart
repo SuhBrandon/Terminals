@@ -29,9 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage("http://bit.ly/3YZofmz")), // Add your background image here
-                fit: BoxFit.cover,
-              ),
+                image: NetworkImage("http://bit.ly/3YZofmz"),
+              ), // Add your background image here
             ),
           ),
           Center(
